@@ -3,6 +3,7 @@
     <test name="MyTest">
         <classes>
             <class name="AccountCreationAndVisability.Account"/>
+            <class name="Register.TCR001"/>
         </classes>
     </test>
 </suite>
