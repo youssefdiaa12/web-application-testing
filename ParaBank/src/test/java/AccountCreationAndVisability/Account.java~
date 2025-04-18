@@ -23,7 +23,7 @@ public class Account {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         WebDriver driver = new ChromeDriver(options);
-        driver.get(": https://parabank.parasoft.com/");
+        driver.get("https://tutorialsninja.com/demo/");
         driver.manage().window().maximize();
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
