@@ -1,55 +1,57 @@
-Parabank Testing Project
- Project Overview
-This repository contains automated test cases for the Parabank online banking demo application. The goal is to verify the core functionalities of the system through manual and automated testing.
+# 🧪 Parabank Testing Project
 
-Features Tested
-User login/logout
+## 📌 Project Overview
+This repository contains **automated and manual test cases** for the [Parabank](https://parabank.parasoft.com/parabank/index.htm) online banking demo application.  
+The objective is to verify the core functionalities of the banking system through functional testing techniques.
 
-Account overview and balance check
+---
 
-Funds transfer
+## ✅ Features Tested
+- User login and logout
+- Account overview and balance verification
+- Funds transfer between accounts
+- Bill payment functionality
+- Transaction history and account activity
+- New account registration
 
-Bill payment
+---
 
-Account activity history
+## 🧰 Tech Stack
 
-New account registration
+- **Testing Type**: Functional Testing  
+- **Tools & Technologies Used**:
+  - Jira (Test Case Management and Bug Reporting)
+  - Selenium WebDriver
+  - TestNG / JUnit
+  - Java
+  - Maven
+  - Git & GitHub
 
-Tech Stack
-Testing Type: Functional Testing
+---
 
-Tools Used:
+##  Test Execution Summary
 
-Jira (Test Case Management and Bug Reporting)
+- All test cases are documented and tracked in Jira.
+- Bugs were reported and linked to their corresponding test cases.
+- Test execution results include passed, failed, and blocked tests.
+- Test status and coverage are visible through Jira dashboards.
 
-Selenium WebDriver
 
-TestNG / JUnit 
 
-Java
+##  Bug Reporting Process
 
-Maven
+Bugs identified during execution are logged in **Jira** and include:
 
-Git & GitHub
+- Description of the issue  
+- Steps to Reproduce the bug  
+- Expected Result vs. Actual Result  
+- Attachments (screenshots, logs, or videos)
 
-Test Execution Summary
 
-All test cases are documented and tracked in Jira. Bugs were reported and linked to corresponding test cases.
 
-Bug Reporting
-  Bugs encountered during test execution were logged in Jira. Each bug includes:
-  Description
-  
-  Steps to reproduce
+##  Lessons Learned
 
-  Expected vs actual results
+- Writing clear, structured test cases enhances defect tracking and collaboration.
+- Consistent and detailed bug reporting speeds up feedback loops and resolution.
+- Maintaining organized test documentation improves traceability and project quality.
 
-  Screenshots or logs
-
- 
-
- 
- Lessons Learned
-Writing structured test cases improves clarity and defect tracking.
-
-Consistent bug reporting speeds up developer feedback.
