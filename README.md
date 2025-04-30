@@ -1,12 +1,11 @@
-# 🧪 Parabank Testing Project
+#  Parabank Testing Project
 
-## 📌 Project Overview
+##  Project Overview
 This repository contains **automated and manual test cases** for the [Parabank](https://parabank.parasoft.com/parabank/index.htm) online banking demo application.  
 The objective is to verify the core functionalities of the banking system through functional testing techniques.
 
----
 
-## ✅ Features Tested
+## Features Tested
 - User login and logout
 - Account overview and balance verification
 - Funds transfer between accounts
@@ -14,9 +13,8 @@ The objective is to verify the core functionalities of the banking system throug
 - Transaction history and account activity
 - New account registration
 
----
 
-## 🧰 Tech Stack
+##  Tech Stack
 
 - **Testing Type**: Functional Testing  
 - **Tools & Technologies Used**:
@@ -27,7 +25,6 @@ The objective is to verify the core functionalities of the banking system throug
   - Maven
   - Git & GitHub
 
----
 
 ##  Test Execution Summary
 
@@ -40,7 +37,7 @@ The objective is to verify the core functionalities of the banking system throug
 
 ##  Bug Reporting Process
 
-Bugs identified during execution are logged in **Jira** and include:
+Bugs identified during execution are logged in Jira and include:
 
 - Description of the issue  
 - Steps to Reproduce the bug  
