@@ -47,6 +47,9 @@ Bugs identified during execution are logged in Jira and include:
 ## Google Drive
   https://drive.google.com/drive/folders/1S_bRk58yjT2ejnOXqqfOBCmWzE3_a80h?usp=sharing
 
+##Jira
+https://youssefosman255.atlassian.net/jira/software/projects/SCRUM/boards/1?atlOrigin=eyJpIjoiODBlMDU3ZGI3ODRkNDc2NjgzNTM3ZmJiMjczNjU0YzciLCJwIjoiaiJ9
+
 ##  Lessons Learned
 
 - Writing clear, structured test cases enhances defect tracking and collaboration.
