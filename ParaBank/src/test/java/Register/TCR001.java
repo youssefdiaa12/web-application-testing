@@ -23,10 +23,8 @@ public class TCR001 {
         WebDriver driver = new ChromeDriver(options);
         driver.get("https://parabank.parasoft.com/");
         driver.manage().window().maximize();
-
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"loginPanel\"]/p[2]/a")));
-
         WebElement RegisterHyberLink = driver.findElement(By.xpath("//*[@id=\"loginPanel\"]/p[2]/a"));
         Assert.assertTrue(RegisterHyberLink.isDisplayed(), "Register hyperlink should be displayed");
         RegisterHyberLink.click();
@@ -38,7 +36,7 @@ public class TCR001 {
         driver.findElement(By.id("customer.address.zipCode")).sendKeys("12345");
         driver.findElement(By.id("customer.phoneNumber")).sendKeys("1234567890");
         driver.findElement(By.id("customer.ssn")).sendKeys("123-45-6789");
-        driver.findElement(By.id("customer.username")).sendKeys("Test");
+        driver.findElement(By.id("customer.username")).sendKeys("Test1");
         driver.findElement(By.id("customer.password")).sendKeys("Test");
         driver.findElement(By.id("repeatedPassword")).sendKeys("Test");
         WebElement Register_button = driver.findElement(By.xpath("//*[@id=\"customerForm\"]/table/tbody/tr[13]/td/input"));
