@@ -1,0 +1,609 @@
+{
+	"info": {
+		"_postman_id": "2520a7bb-2fb8-4b74-86e1-ca689ff4dc7b",
+		"name": "ParaBank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40334665",
+		"_collection_link": "https://crimson-resonance-628018.postman.co/workspace/45a7472b-8213-4fff-8e55-691992134262/collection/40334665-2520a7bb-2fb8-4b74-86e1-ca689ff4dc7b?action=share&source=collection_link&creator=40334665"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const requestBody = JSON.parse(pm.request.body.raw);\r",
+							"\r",
+							"// Extract username and password\r",
+							"const username = requestBody.customer.username;\r",
+							"const password = requestBody.customer.password;\r",
+							"\r",
+							"// Save them to environment variables\r",
+							"pm.environment.set(\"username\", username);\r",
+							"pm.environment.set(\"password\", password);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=B98D8CDAD961E16C7B08818C0EF1F43C",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customer\": {\r\n    \"firstName\": \"ahmed1\",\r\n    \"lastName\": \"mohamed\",\r\n    \"address\": {\r\n      \"street\": \"tanta\",\r\n      \"city\": \"tanat\",\r\n      \"state\": \"tanata\",\r\n      \"zipCode\": \"1234\"\r\n    },\r\n    \"phoneNumber\": \"1234567\",\r\n    \"ssn\": \"123456789\",\r\n    \"username\": \"ahmedmohamed1\",\r\n    \"password\": \"12345\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ParaBankBasicURL}}/register.htm",
+					"host": [
+						"{{ParaBankBasicURL}}"
+					],
+					"path": [
+						"register.htm"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "JSESSIONID=B98D8CDAD961E16C7B08818C0EF1F43C",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customer\": {\r\n    \"firstName\": \"ahmed\",\r\n    \"lastName\": \"mohamed\",\r\n    \"address\": {\r\n      \"street\": \"tanta\",\r\n      \"city\": \"tanat\",\r\n      \"state\": \"tanata\",\r\n      \"zipCode\": \"1234\"\r\n    },\r\n    \"phoneNumber\": \"1234567\",\r\n    \"ssn\": \"123456789\",\r\n    \"username\": \"ahmedmohamed\",\r\n    \"password\": \"12345\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ParaBankBasicURL}}/register.htm",
+							"host": [
+								"{{ParaBankBasicURL}}"
+							],
+							"path": [
+								"register.htm"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 01 May 2025 13:04:46 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "JSESSIONID=BA93BCA09591B861A1A71733A9CC2B07; Path=/parabank; HttpOnly"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store"
+						},
+						{
+							"key": "content-language",
+							"value": "en-US"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "938f7c916db7e1f9-MRS"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						}
+					],
+					"cookie": [],
+					"body": "\r\n\n\n\n<!-- \n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"><html xmlns=\"http://www.w3.org/1999/xhtml\">\n -->\n<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"UTF-8\">\n        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n        <title>ParaBank | Register for Free Online Account Access</title>\n        <link href=\"template.css\" rel=\"stylesheet\"\n\t\t\ttype=\"text/css\" />\n        <link href=\"style.css\" rel=\"stylesheet\"\n\t\t\ttype=\"text/css\" />\n        <script src=\"webjars/jquery/3.7.1/jquery.min.js\"></script>\n    </head>\n    <body\n\t\t\n\t    onload=\"document.login.username.focus();\"\n\t  >\n        <div id=\"mainPanel\">\n            <div id=\"topPanel\">\n                <a href=\"admin.htm\">\n                    <img src=\"images/clear.gif\" width=\"56\" height=\"42\" border=\"0\" class=\"admin\"/>\n                </a>\n                <a href=\"index.htm\">\n                    <img src=\"images/logo.gif\" alt=\"ParaBank\" width=\"136\" height=\"31\" border=\"0\" class=\"logo\" title=\"ParaBank\"/>\n                </a>\n                <p class=\"caption\">Experience the difference</p>\n            </div>\n            <div id=\"headerPanel\" style=\"background: url(images/header-main.jpg) 0 0 no-repeat;\">\n                <ul class=\"leftmenu\">\n                    <li class=\"Solutions\">Solutions</li>\n                    <li>\n                        <a href=\"about.htm\">About Us</a>\n                    </li>\n                    <li>\n                        <a href=\"services.htm\">Services</a>\n                    </li>\n                    <li>\n                        <a href=\"http://www.parasoft.com/jsp/products.jsp\">Products</a>\n                    </li>\n                    <li>\n                        <a href=\"http://www.parasoft.com/jsp/pr/contacts.jsp\">Locations</a>\n                    </li>\n                    <li>\n                        <a href=\"admin.htm\">Admin Page</a>\n                    </li>\n                </ul>\n                <ul class=\"button\">\n                    <li class=\"home\">\n                        <a href=\"index.htm\">home</a>\n                    </li>\n                    <li class=\"aboutus\">\n                        <a href=\"about.htm\">about</a>\n                    </li>\n                    <li class=\"contact\">\n                        <a href=\"contact.htm\">contact</a>\n                    </li>\n                </ul>\n            </div>\n            <div id=\"bodyPanel\">\n                <div id=\"leftPanel\">\n                    <h2>Customer Login</h2>\n                    <div id=\"loginPanel\">\n                        <form name=\"login\" action=\"login.htm\" method=\"POST\">\n                            <p>\n                                <b>Username</b>\n                            </p>\n                            <div class=\"login\">\n                                <input type=\"text\" class=\"input\" name=\"username\"/>\n                            </div>\n                            <p>\n                                <b>Password</b>\n                            </p>\n                            <div class=\"login\">\n                                <input type=\"password\" class=\"input\" name=\"password\"/>\n                            </div>\n                            <div class=\"login\">\n                                <input type=\"submit\" class=\"button\" value=\"Log In\"/>\n                            </div>\n                        </form>\n                        <p>\n                            <a href=\"lookup.htm\">Forgot login info?</a>\n                        </p>\n                        <p>\n                            <a href=\"register.htm\">Register</a>\n                        </p>\n                    </div>\n                </div>\n                <div id=\"rightPanel\">\n                    <h1 class=\"title\">Signing up is easy!</h1>\n                    <p>If you have an account with us you can sign-up for free instant online access. You will have to provide some personal information.</p>\n                    <form id=\"customerForm\" action=\"register.htm\" method=\"post\">\n                        <table class=\"form2\" >\n                            <tr>\n                                <td align=\"right\" width=\"30%\">\n                                    <b>First Name:</b>\n                                </td>\n                                <td width=\"20%\">\n                                    <input id=\"customer.firstName\" name=\"customer.firstName\" class=\"input\" type=\"text\" value=\"\"/>\n                                </td>\n                                <td width=\"50%\">\r\n        \r\n      </td>\n                            </tr>\n                            <tr>\n                                <td align=\"right\" width=\"30%\">\n                                    <b>Last Name:</b>\n                                </td>\n                                <td width=\"20%\">\n                                    <input id=\"customer.lastName\" name=\"customer.lastName\" class=\"input\" type=\"text\" value=\"\"/>\n                                </td>\n                                <td width=\"50%\">\r\n        \r\n      </td>\n                            </tr>\n                            <tr>\n                                <td align=\"right\" width=\"30%\">\n                                    <b>Address:</b>\n                                </td>\n                                <td width=\"20%\">\n                                    <input id=\"customer.address.street\" name=\"customer.address.street\" class=\"input\" type=\"text\" value=\"\"/>\n                                </td>\n                                <td width=\"50%\">\r\n        \r\n      </td>\n                            </tr>\n                            <tr>\n                                <td align=\"right\" width=\"30%\">\n                                    <b>City:</b>\n                                </td>\n                                <td width=\"20%\">\n                                    <input id=\"customer.address.city\" name=\"customer.address.city\" class=\"input\" type=\"text\" value=\"\"/>\n                                </td>\n                                <td width=\"50%\">\r\n        \r\n      </td>\n                            </tr>\n                            <tr>\n                                <td align=\"right\" width=\"30%\">\n                                    <b>State:</b>\n                                </td>\n                                <td width=\"20%\">\n                                    <input id=\"customer.address.state\" name=\"customer.address.state\" class=\"input\" type=\"text\" value=\"\"/>\n                                </td>\n                                <td width=\"50%\">\r\n        \r\n      </td>\n                            </tr>\n                            <tr>\n                                <td align=\"right\" width=\"30%\">\n                                    <b>Zip Code:</b>\n                                </td>\n                                <td width=\"20%\">\n                                    <input id=\"customer.address.zipCode\" name=\"customer.address.zipCode\" class=\"input\" type=\"text\" value=\"\"/>\n                                </td>\n                                <td width=\"50%\">\r\n        \r\n      </td>\n                            </tr>\n                            <tr>\n                                <td align=\"right\" width=\"30%\">\n                                    <b>Phone #:</b>\n                                </td>\n                                <td width=\"20%\">\n                                    <input id=\"customer.phoneNumber\" name=\"customer.phoneNumber\" class=\"input\" type=\"text\" value=\"\"/>\n                                </td>\n                                <td width=\"50%\">\r\n        \r\n      </td>\n                            </tr>\n                            <tr>\n                                <td align=\"right\" width=\"30%\">\n                                    <b>SSN:</b>\n                                </td>\n                                <td width=\"20%\">\n                                    <input id=\"customer.ssn\" name=\"customer.ssn\" class=\"input\" type=\"text\" value=\"\"/>\n                                </td>\n                                <td width=\"50%\">\r\n        \r\n      </td>\n                            </tr>\n                            <tr>\n                                <td>&nbsp;</td>\n                            </tr>\n                            <tr>\n                                <td align=\"right\" width=\"30%\">\n                                    <b>Username:</b>\n                                </td>\n                                <td width=\"20%\">\n                                    <input id=\"customer.username\" name=\"customer.username\" class=\"input\" type=\"text\" value=\"\"/>\n                                </td>\n                                <td width=\"50%\">\r\n        \r\n      </td>\n                            </tr>\n                            <tr>\n                                <td align=\"right\" width=\"30%\">\n                                    <b>Password:</b>\n                                </td>\n                                <td width=\"20%\">\n                                    <input id=\"customer.password\" name=\"customer.password\" class=\"input\" type=\"password\" value=\"\"/>\n                                </td>\n                                <td width=\"50%\">\r\n        \r\n      </td>\n                            </tr>\n                            <tr>\n                                <td align=\"right\" width=\"30%\">\n                                    <b>Confirm:</b>\n                                </td>\n                                <td width=\"20%\">\n                                    <input id=\"repeatedPassword\" name=\"repeatedPassword\" class=\"input\" type=\"password\" value=\"\"/>\n                                </td>\n                                <td width=\"50%\">\r\n        \r\n      </td>\n                            </tr>\n                            <tr>\n                                <td>&nbsp;</td>\n                                <td colspan=\"2\">\n                                    <input type=\"submit\" class=\"button\" value=\"Register\">\n                                </td>\n                            </tr>\n                        </table>\n                        <br>\r\n\n                    </form>\n                </div>\n            </div>\n        </div>\n        <div id=\"footermainPanel\">\n            <div id=\"footerPanel\">\n                <ul>\n                    <li>\n                        <a href=\"index.htm\">Home</a>|\n                    </li>\n                    <li>\n                        <a href=\"about.htm\">About Us</a>|\n                    </li>\n                    <li>\n                        <a href=\"services.htm\">Services</a>|\n                    </li>\n                    <li>\n                        <a href=\"http://www.parasoft.com/jsp/products.jsp\">Products</a>|\n                    </li>\n                    <li>\n                        <a href=\"http://www.parasoft.com/jsp/pr/contacts.jsp\">Locations</a>|\n                    </li>\n                    <li>\n                        <a href=\"http://forums.parasoft.com/\">Forum</a>|\n                    </li>\n                    <li>\n                        <a href=\"sitemap.htm\">Site Map</a>|\n                    </li>\n                    <li>\n                        <a href=\"contact.htm\">Contact Us</a>\n                    </li>\n                </ul>\n                <p class=\"copyright\">&copy; Parasoft. All rights reserved.</p>\n                <ul class=\"visit\">\n                    <li>Visit us at:</li>\n                    <li>\n                        <a href=\"http://www.parasoft.com/\" target=\"_blank\">www.parasoft.com</a>\n                    </li>\n                </ul>\n            </div>\n        </div>\n    </body>\n</html>"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=EA33C06EFCF6DACB8C5B36E3A2BFD979",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{ParaBankBasicURL}}/login.htm?username=ahmedmohamed1&password=12345",
+					"host": [
+						"{{ParaBankBasicURL}}"
+					],
+					"path": [
+						"login.htm"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "ahmedmohamed1"
+						},
+						{
+							"key": "password",
+							"value": "12345"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer Information",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ParaBankBasicURL}}/services/bank/customers/{{BasicCustomer}}",
+					"host": [
+						"{{ParaBankBasicURL}}"
+					],
+					"path": [
+						"services",
+						"bank",
+						"customers",
+						"{{BasicCustomer}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Customer Information",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<customer>\r\n  <id>12212</id>\r\n  <firstName>John</firstName>\r\n  <lastName>Doe</lastName>\r\n  <address>\r\n    <street>123 Main St</street>\r\n    <city>Anytown</city>\r\n    <state>CA</state>\r\n    <zipCode>12345</zipCode>\r\n  </address>\r\n  <phoneNumber>555-1234</phoneNumber>\r\n  <ssn>123-45-6789</ssn>\r\n  <username>johndoe</username>\r\n  <password>password</password>\r\n</customer>\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ParaBankBasicURL}}/services/bank/customers/1221",
+							"host": [
+								"{{ParaBankBasicURL}}"
+							],
+							"path": [
+								"services",
+								"bank",
+								"customers",
+								"1221"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Account Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ParaBankBasicURL}}/services/bank/accounts/{{BankAccount}}/transactions",
+					"host": [
+						"{{ParaBankBasicURL}}"
+					],
+					"path": [
+						"services",
+						"bank",
+						"accounts",
+						"{{BankAccount}}",
+						"transactions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Account Details",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<account>\r\n  <id>12345</id>\r\n  <customerId>12212</customerId>\r\n  <type>CHECKING</type>\r\n  <balance>1000.00</balance>\r\n</account>\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ParaBankBasicURL}}/services/bank/accounts/{accountId}",
+							"host": [
+								"{{ParaBankBasicURL}}"
+							],
+							"path": [
+								"services",
+								"bank",
+								"accounts",
+								"{accountId}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Account Overview",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ahmedmohamed",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{ParaBankBasicURL}}/overview.htm",
+					"host": [
+						"{{ParaBankBasicURL}}"
+					],
+					"path": [
+						"overview.htm"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Account Details",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<account>\r\n  <id>12345</id>\r\n  <customerId>12212</customerId>\r\n  <type>CHECKING</type>\r\n  <balance>1000.00</balance>\r\n</account>\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ParaBankBasicURL}}/services/bank/accounts/{accountId}",
+							"host": [
+								"{{ParaBankBasicURL}}"
+							],
+							"path": [
+								"services",
+								"bank",
+								"accounts",
+								"{accountId}"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Account Transactions",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<transactions>\r\n  <transaction>\r\n    <id>1</id>\r\n    <type>DEPOSIT</type>\r\n    <amount>500.00</amount>\r\n    <description>Initial deposit</description>\r\n  </transaction>\r\n  <!-- More transactions -->\r\n</transactions>\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ParaBankBasicURL}}/services/bank/accounts/{accountId}/transactions",
+							"host": [
+								"{{ParaBankBasicURL}}"
+							],
+							"path": [
+								"services",
+								"bank",
+								"accounts",
+								"{accountId}",
+								"transactions"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Transfer Funds",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "ahmedmohamed1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": "JSESSIONID=E6939A2727DE0FFF3A65BC13E1DECB9C",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<transferForm>\r\n    <fromAccountId>25110</fromAccountId>\r\n    <toAccountId>24333</toAccountId>\r\n    <amount>100.00</amount>\r\n</transferForm>\r\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ParaBankBasicURL}}/services/bank/transfer?amount=100",
+					"host": [
+						"{{ParaBankBasicURL}}"
+					],
+					"path": [
+						"services",
+						"bank",
+						"transfer"
+					],
+					"query": [
+						{
+							"key": "amount",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bill Payment Services",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "payeeName=UtilityCompany&address=123+Main+St&city=Anytown&state=CA&zipCode=12345&phoneNumber=555-1234&accountNumber=987654321&amount=150.00&fromAccountId=12345\r\n",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ParaBankBasicURL}}/services/bank/paybill",
+					"host": [
+						"{{ParaBankBasicURL}}"
+					],
+					"path": [
+						"services",
+						"bank",
+						"paybill"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Open New Account",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerId\": {{AccountOverView}},\r\n  \"newAccountType\": 1,\r\n  \"fromAccountId\": 12345\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ParaBankBasicURL}}/openaccount.htm",
+					"host": [
+						"{{ParaBankBasicURL}}"
+					],
+					"path": [
+						"openaccount.htm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request Loan",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerId\": \"{{AccountOverView}}\",\r\n  \"amount\": 5000,\r\n  \"downPayment\": 500,\r\n  \"fromAccountId\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{ParaBankBasicURL}}/services/bank/requestLoan",
+					"host": [
+						"{{ParaBankBasicURL}}"
+					],
+					"path": [
+						"services",
+						"bank",
+						"requestLoan"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

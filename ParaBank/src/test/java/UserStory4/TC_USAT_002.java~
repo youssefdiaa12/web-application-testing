@@ -1,0 +1,53 @@
+package UserStory4;
+
+import UserStory3.TCR001;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import java.util.List;
+
+public class TC_USAT_002 {
+
+
+    @Test
+    public void register() throws InterruptedException {
+        TCR001 tcr001 = new TCR001();
+        tcr001.registerAccountWithMendatoryFields();
+        WebDriver driver = tcr001.driver;
+
+        // since by default the account has 515$ so we need to create a new account six times since in each time it takes 100$  so that we expect in the 6th time to have 515-600= -85$ so we need to check if the error message is displayed
+        for (int i = 0; i < 6; i++) {
+            WebElement open_new_account = driver.findElement(By.xpath("//*[@id=\"leftPanel\"]/ul/li[1]/a"));
+            Assert.assertTrue(open_new_account.isDisplayed(), "Open new account should be displayed");
+            open_new_account.click();
+            //wait for the account type to be displayed
+            Thread.sleep(3000);
+            if (i == 5) {
+                WebElement error_message = driver.findElement(By.xpath("//*[@id=\"rightPanel\"]/p"));
+                Assert.assertTrue(error_message.isDisplayed(), "Error message should be displayed");
+            } else {
+
+                WebElement account_type = driver.findElement(By.id("type"));
+                Assert.assertTrue(account_type.isDisplayed(), "Account type should be displayed");
+                List<WebElement> options = new Select(driver.findElement(By.id("type"))).getOptions();
+                String first_option = options.get(0).getText();
+                //check that the first option is "CHECKING" , If not we should you assert false
+                Assert.assertEquals(first_option, "CHECKING", "The first option should be CHECKING");
+                String second_option = options.get(1).getText();
+                //check that the second option is "SAVINGS" , If not we should you assert false
+                Assert.assertEquals(second_option, "SAVINGS", "The second option should be SAVINGS");
+                WebElement open_new_account_button = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div[2]/div/div[1]/form/div/input"));
+                Assert.assertTrue(open_new_account_button.isDisplayed(), "Open new account button should be displayed");
+                open_new_account_button.click();
+                //wait for the account type to be displayed
+                Thread.sleep(3000);
+
+            }
+        }
+    }
+
+}
