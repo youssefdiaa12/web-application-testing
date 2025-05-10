@@ -2,8 +2,8 @@
 <suite name="MySuite">
     <test name="MyTest">
         <classes>
-            <class name="AccountCreationAndVisability.Account"/>
-            <class name="Register.TCR001"/>
+            <class name="UserStory4.TC_USAT_001"/>
+            <class name="UserStory3.TCR001"/>
         </classes>
     </test>
 </suite>
