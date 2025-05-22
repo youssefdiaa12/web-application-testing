@@ -16,7 +16,6 @@ public class TC_USAT_003 {
     @Test
     public void User_selects_account_type() throws InterruptedException {
         TCR001 tcr001 = new TCR001();
-        tcr001.registerAccountWithMendatoryFields();
         WebDriver driver = tcr001.driver;
 
         WebElement open_new_account = driver.findElement(By.xpath("//*[@id=\"leftPanel\"]/ul/li[1]/a"));

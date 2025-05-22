@@ -16,7 +16,6 @@ public class TC_USAT_002 {
     @Test
     public void register() throws InterruptedException {
         TCR001 tcr001 = new TCR001();
-        tcr001.registerAccountWithMendatoryFields();
         WebDriver driver = tcr001.driver;
 
         // since by default the account has 515$ so we need to create a new account six times since in each time it takes 100$  so that we expect in the 6th time to have 515-600= -85$ so we need to check if the error message is displayed

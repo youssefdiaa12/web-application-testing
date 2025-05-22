@@ -4,6 +4,9 @@
         <classes>
             <class name="UserStory4.TC_USAT_001"/>
             <class name="UserStory3.TCR001"/>
+            <class name="UserStory3.TCR002"></class>
+            <class name="UserStory4.TC_USAT_002"></class>
+            <class name="UserStory4.TC_USAT_003"></class>
         </classes>
     </test>
 </suite>
