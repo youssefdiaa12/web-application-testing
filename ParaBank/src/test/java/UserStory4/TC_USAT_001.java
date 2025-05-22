@@ -16,7 +16,6 @@ public class TC_USAT_001 {
     @Test
     public void register() throws InterruptedException {
         TCR001 tcr001 = new TCR001();
-        tcr001.registerAccountWithMendatoryFields();
        WebDriver driver = tcr001.driver;
        WebElement open_new_account=driver.findElement(By.xpath("//*[@id=\"leftPanel\"]/ul/li[1]/a"));
         Assert.assertTrue(open_new_account.isDisplayed(), "Open new account should be displayed");
