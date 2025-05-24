@@ -1,25 +1,18 @@
 package LetCodePage;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+
 
 public class LetCodePage {
     private static WebElement webElement;
     private static WebDriver driver;
-   public LetCodePage(){
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-         driver = new ChromeDriver(options);
+
+   public LetCodePage(WebDriver driver1){
          webElement=null;
+            driver=driver1;
     }
-    public WebDriver returnDriver() {
-        return driver;
-    }
+
 
     public  WebElement getFullName() {
          webElement=driver.findElement(By.id("fullName"));
@@ -39,6 +32,10 @@ public class LetCodePage {
     }
     public  WebElement getNoEdit() {
         webElement=driver.findElement(By.id("noEdit"));
+        return webElement;
+    }
+    public  WebElement getWorkSpace() {
+        webElement=driver.findElement(By.id("testing"));
         return webElement;
     }
 }

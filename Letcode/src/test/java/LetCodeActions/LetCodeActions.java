@@ -1,4 +1,4 @@
-package LetCodePage;
+package LetCodeActions;
 
 import org.openqa.selenium.WebElement;
 
